@@ -1,0 +1,237 @@
+/* =========================
+   SUNNYCORE — Site Layout
+   ========================= */
+.container {
+  width: min(var(--maxw), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* Ensure content renders above background */
+.site-header,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   Header
+   ========================= */
+.site-header {
+  padding: var(--s-4) 0 var(--s-3);
+}
+
+.top-row {
+  display: flex;
+  gap: var(--s-2);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  background: var(--sun-yellow);
+}
+
+.brand-emoji {
+  font-size: 22px;
+}
+
+.brand-text {
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--lemon-cream);
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.nav a:hover {
+  background: var(--white);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Hero
+   ========================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
+  align-items: center;
+}
+
+.hero-left .callout {
+  margin-top: var(--s-3);
+  padding: var(--s-3);
+  background: var(--lemon-cream);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+  margin-top: var(--s-3);
+}
+
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+  margin-top: var(--s-3);
+  padding: var(--s-2);
+  background: var(--lemon-cream);
+}
+
+.action-note {
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+/* =========================
+   Sections
+   ========================= */
+.section {
+  margin: var(--s-6) 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-3);
+}
+
+.section-footer {
+  padding: var(--s-3);
+  background: var(--lemon-cream);
+  margin-top: var(--s-3);
+}
+
+/* =========================
+   Grid helpers
+   ========================= */
+.grid {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.cards-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .cards-3,
+  .cards-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mt {
+  margin-top: var(--s-3);
+}
+
+/* =========================
+   Palette swatches (page demo)
+   ========================= */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+
+@media (max-width: 960px) {
+  .palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.swatch {
+  overflow: hidden;
+  background: var(--white);
+}
+
+.swatch-color {
+  height: 90px;
+  background: var(--sw);
+  border-bottom: var(--border-primary);
+}
+
+.swatch-meta {
+  padding: 12px 14px;
+}
+
+.swatch-name {
+  font-weight: 800;
+}
+
+.swatch-hex,
+.swatch-token {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 12px;
+}
+
+/* =========================
+   Panel demo
+   ========================= */
+.panel-demo {
+  background: var(--bubblegum-pink);
+  border: var(--border-primary);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sticker);
+  padding: var(--s-3);
+  color: var(--white);
+}
+
+.panel-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.panel-sub {
+  opacity: 0.95;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer {
+  margin: var(--s-6) 0 var(--s-5);
+  padding: var(--s-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+  background: var(--soft-white);
+}

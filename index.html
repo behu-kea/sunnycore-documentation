@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUNNYCORE — Design Language</title>
+
+    <!-- Fonts (SUNNYCORE spec) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="sunnycore.css" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+
+  <body class="confetti-bg">
+    <header class="site-header">
+      <div class="container">
+        <div class="top-row">
+          <a class="brand sticker" href="#top" aria-label="Sunnycore Home">
+            <span class="brand-emoji" aria-hidden="true">🌞</span>
+            <span class="brand-text">SUNNYCORE</span>
+          </a>
+
+          <nav class="nav sticker" aria-label="Primary navigation">
+            <a href="#principles">Principles</a>
+            <a href="#tokens">Tokens</a>
+            <a href="#colors">Colors</a>
+            <a href="#type">Typography</a>
+            <a href="#components">Components</a>
+            <a href="#css-usage">CSS Usage</a>
+            <a href="#copy">Copy Pack</a>
+          </nav>
+        </div>
+
+        <section class="hero" id="top">
+          <div class="hero-left">
+            <div class="badge stamp">CERTIFIED GOOD VIBES</div>
+
+            <h1 class="h1">
+              Optimism, turned up to <span class="highlight">11</span>.
+            </h1>
+
+            <p class="lead">
+              SUNNYCORE is a design movement focused on
+              <strong>extreme happiness</strong>: thick outlines, sticker lift
+              shadows, loud color blocks, confetti texture, and supportive copy.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="copy-ai" type="button">
+                Copy for AI
+              </button>
+              <a class="btn btn-ghost" href="sunnycore.css" download
+                >Download CSS</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="sunnycore-design-language.md"
+                download
+              >
+                Download Design specification
+              </a>
+              <span
+                class="action-note"
+                id="copy-status"
+                role="status"
+                aria-live="polite"
+              ></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Principles -->
+      <section class="section" id="principles">
+        <div class="section-header">
+          <h2 class="h2">Non-Negotiable Rules</h2>
+          <div class="badge pill">THE 7 RULES</div>
+        </div>
+
+        <div class="grid cards-3">
+          <article class="card sticker">
+            <h3 class="h3">1) Happiness is default</h3>
+            <p>
+              Everything looks like it’s happy to be there. No harshness. No
+              shame.
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">2) Thick outlines</h3>
+            <p>
+              Key elements use <strong>3–5px ink borders</strong>. This is the
+              backbone.
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">3) Loud color blocks</h3>
+            <p>
+              Large saturated panels. Avoid muted “tasteful minimal” palettes.
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">4) Sticker UI</h3>
+            <p>
+              Everything floats via the sticker shadow recipe. (It’s a physical
+              illusion.)
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">5) Oversized type</h3>
+            <p>
+              Headlines are poster-sized. 2–6 words. Big energy, simple
+              structure.
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">6) Confetti layer</h3>
+            <p>
+              Light celebration texture appears consistently across pages and
+              posters.
+            </p>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">7) Kind UX moments</h3>
+            <p>Even errors feel friendly. Always reassure + show next step.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tokens -->
+      <section class="section" id="tokens">
+        <div class="section-header">
+          <h2 class="h2">Design Tokens</h2>
+          <div class="badge stamp alt">SOURCE OF TRUTH</div>
+        </div>
+
+        <div class="grid cards-2">
+          <article class="card sticker">
+            <h3 class="h3">Outline + Shadow</h3>
+            <p>“Slightly floating” is not vague. It’s a specific recipe:</p>
+            <pre class="code">
+border: 4px solid var(--ink);
+box-shadow: 0px 10px 0px var(--ink);</pre
+            >
+            <div class="demo-row">
+              <div class="mini-swatch sticker">Sticker</div>
+              <div class="mini-swatch sticker subtle">Sticker (subtle)</div>
+            </div>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Radius + Spacing</h3>
+            <p>Chunky shapes + generous spacing = friendly presence.</p>
+            <pre class="code">
+--radius-pill: 999px;
+--radius-card: 28px;
+--radius-input: 18px;
+
+Spacing scale:
+8 / 16 / 24 / 40 / 64 / 96</pre
+            >
+            <div class="demo-row">
+              <button class="btn btn-primary">BIG BUTTON ✨</button>
+              <span class="badge pill">PILL BADGE</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Colors -->
+      <section class="section" id="colors">
+        <div class="section-header">
+          <h2 class="h2">Color Palette</h2>
+          <div class="badge pill">PRIMARY TOKENS</div>
+        </div>
+
+        <div class="palette">
+          <div class="swatch sticker" style="--sw: var(--sun-yellow)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta">
+              <div class="swatch-name">Sun Yellow</div>
+              <div class="swatch-hex">#FFE600</div>
+              <div class="swatch-token">--sun-yellow</div>
+            </div>
+          </div>
+
+          <div class="swatch sticker" style="--sw: var(--bubblegum-pink)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta">
+              <div class="swatch-name">Bubblegum Pink</div>
+              <div class="swatch-hex">#FF4FD8</div>
+              <div class="swatch-token">--bubblegum-pink</div>
+            </div>
+          </div>
+
+          <div class="swatch sticker" style="--sw: var(--sky-cyan)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta">
+              <div class="swatch-name">Sky Cyan</div>
+              <div class="swatch-hex">#14D9FF</div>
+              <div class="swatch-token">--sky-cyan</div>
+            </div>
+          </div>
+
+          <div class="swatch sticker" style="--sw: var(--mint-green)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta">
+              <div class="swatch-name">Mint Green</div>
+              <div class="swatch-hex">#4CFF88</div>
+              <div class="swatch-token">--mint-green</div>
+            </div>
+          </div>
+
+          <div class="swatch sticker" style="--sw: var(--tangerine)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta">
+              <div class="swatch-name">Tangerine</div>
+              <div class="swatch-hex">#FF7A00</div>
+              <div class="swatch-token">--tangerine</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid cards-2 mt">
+          <article class="card sticker">
+            <h3 class="h3">Usage Rules</h3>
+            <ul class="bullets">
+              <li>
+                <strong>70/20/10</strong> composition rule (space / blocks /
+                accents)
+              </li>
+              <li>Use <strong>Ink</strong> (#111) for outlines everywhere</li>
+              <li>Avoid subtle gradients — prefer bold panels</li>
+              <li>
+                Never place body text directly on neon without a backing shape
+              </li>
+            </ul>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Example: Loud Panel</h3>
+            <div class="panel-demo">
+              <div class="panel-title">TODAY IS A YES.</div>
+              <div class="panel-sub">
+                Big message + hard contrast + sticker border.
+              </div>
+              <div class="badge stamp">SUNNYCORE APPROVED</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Typography -->
+      <section class="section" id="type">
+        <div class="section-header">
+          <h2 class="h2">Typography</h2>
+          <div class="badge pill">FREDOKA + INTER</div>
+        </div>
+
+        <div class="grid cards-2">
+          <article class="card sticker">
+            <h3 class="h3">Headline Family</h3>
+            <p class="muted">
+              Headlines use <strong>Fredoka</strong> for toy-box confidence.
+              Short, loud, immediate.
+            </p>
+
+            <div class="type-samples">
+              <div class="h1 sample">MORE GOOD DAYS.</div>
+              <div class="h2 sample">JOY IS A STRATEGY.</div>
+              <div class="h3 sample">CERTIFIED GOOD VIBES</div>
+            </div>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Body Family</h3>
+            <p class="muted">
+              Body uses <strong>Inter</strong> for readability at high intensity
+              backgrounds.
+            </p>
+
+            <p class="body-l">
+              Body L — 18px, weight 500, line-height 1.6. “Friendly + readable.”
+            </p>
+
+            <p class="body-m">
+              Body M — 16px, weight 500, line-height 1.6. This is your default.
+            </p>
+
+            <p class="body-s">
+              Body S — 14px, weight 450. Use sparingly for secondary microcopy.
+            </p>
+
+            <div class="stat-row">
+              <div class="stat sticker">
+                <div class="stat-num">64px</div>
+                <div class="stat-label">Hero H1</div>
+              </div>
+              <div class="stat sticker">
+                <div class="stat-num">4px</div>
+                <div class="stat-label">Outline</div>
+              </div>
+              <div class="stat sticker">
+                <div class="stat-num">10px</div>
+                <div class="stat-label">Sticker Shadow</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Components -->
+      <section class="section" id="components">
+        <div class="section-header">
+          <h2 class="h2">Components</h2>
+          <div class="badge stamp">PRESSABLE JOY</div>
+        </div>
+
+        <div class="grid cards-2">
+          <article class="card sticker">
+            <h3 class="h3">Buttons</h3>
+            <p class="muted">
+              Big, outlined, pill-shaped. Hover lifts like a sticker peel.
+            </p>
+
+            <div class="demo-stack">
+              <button class="btn btn-primary" type="button">LET’S GO ✨</button>
+              <button class="btn btn-secondary" type="button">
+                SEE THE GOOD STUFF
+              </button>
+              <button class="btn btn-ghost" type="button">
+                TINY HEADS-UP 🌤️
+              </button>
+            </div>
+
+            <pre class="code">
+.btn-primary {
+  border: 4px solid #111;
+  box-shadow: 0px 10px 0px #111;
+  border-radius: 999px;
+}</pre
+            >
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Badges & Stamps</h3>
+            <p class="muted">
+              Always outlined. Often rotated. “Certified” language is a
+              signature.
+            </p>
+
+            <div class="demo-stack">
+              <span class="badge stamp">CERTIFIED GOOD VIBES</span>
+              <span class="badge stamp alt">SUNNYCORE APPROVED</span>
+              <span class="badge pill">PILL BADGE</span>
+              <span class="badge warn">⚠️ TOO MUCH JOY INSIDE</span>
+            </div>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Sticker Cards</h3>
+            <p class="muted">
+              Chunky padding, large radius, thick outline, sticker shadow.
+            </p>
+
+            <div class="grid cards-2">
+              <div class="card sticker small tilt-left">
+                <div class="card-top">
+                  <div class="icon-bubble">✨</div>
+                  <span class="badge pill">NEW</span>
+                </div>
+                <h4 class="h4">Collectible UI</h4>
+                <p>Feels like a sticker pack, not a boring SaaS dashboard.</p>
+                <a class="link" href="#copy">Copy pack →</a>
+              </div>
+
+              <div
+                class="card sticker small tilt-right"
+                style="background: var(--lemon-cream)"
+              >
+                <div class="card-top">
+                  <div class="icon-bubble">🌈</div>
+                  <span class="badge stamp alt">WOW</span>
+                </div>
+                <h4 class="h4">Loud & Kind</h4>
+                <p>Strong visuals, gentle tone. Happiness with structure.</p>
+                <a class="link" href="#colors">Palette →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card sticker">
+            <h3 class="h3">Inputs & Alerts</h3>
+            <p class="muted">
+              Forms should feel supportive. Alerts are kind + actionable.
+            </p>
+
+            <label class="label" for="city">Your city</label>
+            <input
+              class="input"
+              id="city"
+              type="text"
+              placeholder="Type anything 💛"
+              aria-describedby="helper"
+            />
+            <div class="helper" id="helper">
+              You’re doing great. This takes 10 seconds ✨
+            </div>
+
+            <div class="alerts">
+              <div class="alert success sticker">
+                <strong>YAY! SAVED 🎉</strong>
+                <span>Everything is sparkling.</span>
+              </div>
+
+              <div class="alert info sticker">
+                <strong>FYI 🙂</strong>
+                <span>This is going great.</span>
+              </div>
+
+              <div class="alert error sticker">
+                <strong>OOPSIE 🌈</strong>
+                <span>Almost perfect — try again.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer sticker subtle">
+          <strong>SUNNYCORE rule:</strong> If it looks “nice modern UI,”
+          increase outline thickness, headline size, saturation, stamps, and
+          sticker shadows.
+        </div>
+      </section>
+
+      <footer class="footer sticker">
+        <div>
+          <strong>SUNNYCORE</strong> — loud joy with rules.<br />
+          Built from tokens: outlines, sticker lift, saturated blocks, confetti
+          texture, kind copy.
+        </div>
+        <div class="badge stamp alt">MAXIMUM HAPPINESS</div>
+      </footer>
+    </main>
+
+    <textarea id="ai-document" class="sr-only" aria-hidden="true">
+# SUNNYCORE — Design Language Specification (Concrete Edition)
+**Version:** 1.1  
+**Goal:** An *instantly recognizable* design movement: **extreme happiness + graphic punch**.  
+**Recognition test:** If you screenshot any page/poster, it should scream **SUNNYCORE** even with the logo removed.
+
+---
+
+# 0) SUNNYCORE in 10 seconds (the recipe)
+A SUNNYCORE composition must include **all** of these:
+
+1) **Thick black outline** on key elements (3–5px)  
+2) **Ultra-saturated color blocks** (no muted palette)  
+3) **Sticker lift shadow** (specific shadow recipe below)  
+4) **Oversized headline font (Fredoka)**  
+5) **Confetti texture layer** (light but constant)  
+6) **Joy stamp** (CERTIFIED / APPROVED / GOOD VIBES)  
+7) **One burst shape** behind a primary element (CTA or headline)
+
+If any of the above are missing → it becomes “nice happy brand,” not SUNNYCORE.
+
+---
+
+# 1) Color System (Concrete Palette + Rules)
+
+## 1.1 Primary palette (SUNNYCORE Core)
+These are intentionally loud and high-energy.
+
+| Token | Name | Hex | Use |
+|------|------|-----|-----|
+| `sun-yellow` | Sun Yellow | `#FFE600` | Primary energy, highlights, bursts |
+| `bubblegum-pink` | Bubblegum Pink | `#FF4FD8` | Friendly accents, stamps, playful panels |
+| `sky-cyan` | Sky Cyan | `#14D9FF` | Info sections, fresh UI blocks |
+| `mint-green` | Mint Green | `#4CFF88` | Success, positive confirmation, “go” states |
+| `tangerine` | Tangerine | `#FF7A00` | CTA emphasis, urgency (positive urgency) |
+
+## 1.2 Secondary palette (Flavor + variation)
+| Token | Name | Hex | Use |
+|------|------|-----|-----|
+| `peach` | Peach | `#FFB199` | Soft warm background blocks |
+| `lavender` | Lavender | `#B79CFF` | Calm-but-happy secondary sections |
+| `lemon-cream` | Lemon Cream | `#FFF7C2` | Background for text-heavy content |
+| `soft-white` | Soft White | `#FFFDF5` | Default page background |
+| `cloud-gray` | Cloud Gray | `#F1F1F1` | Subtle separation blocks |
+
+## 1.3 Neutrals (readability + outline)
+| Token | Name | Hex | Use |
+|------|------|-----|-----|
+| `ink` | Ink Black | `#111111` | Outlines, headline text |
+| `charcoal` | Warm Charcoal | `#1E1E1E` | Body text |
+| `white` | White | `#FFFFFF` | Text on dark blocks |
+
+---
+
+## 1.4 Color usage rules (non-negotiable)
+### Rule A — The 70/20/10 layout rule
+- **70%** soft-white / lemon-cream background space  
+- **20%** saturated blocks (primary palette)  
+- **10%** accents (stamps, outlines, confetti, small stickers)
+
+### Rule B — Always use blocks, not subtle gradients
+SUNNYCORE looks like **printed stickers + posters**, not modern glass gradients.
+
+✅ OK: big rectangle of `#FFE600` behind a headline  
+❌ Not OK: subtle gradient background or faded pastel wash
+
+### Rule C — Outlines always use Ink
+Outlines are **always** `#111111` (Ink).  
+That consistency makes it instantly recognizable.
+
+---
+
+# 2) Typography (Concrete Font Stack + Scale)
+
+SUNNYCORE uses a *toy-box headline font* with a *clean readable body font*.
+
+## 2.1 Font choices (pick these)
+### Headline font (required)
+- **Fredoka** (Google Font)  
+Fallback: `"Fredoka", "Baloo 2", system-ui, sans-serif`
+
+### Body font (required)
+- **Inter** (Google Font)  
+Fallback: `"Inter", system-ui, -apple-system, sans-serif`
+
+### Optional number/stat font (if you want “scoreboard” energy)
+- **Bungee** (Google Font) for big numeric callouts  
+Fallback: `"Bungee", "Fredoka", sans-serif`
+
+---
+
+## 2.2 Type scale (use exact sizes)
+Use a *poster-like* typographic hierarchy.
+
+### Headlines (Fredoka)
+- **H1 / Hero:** 64px (desktop), 40px (mobile) — weight 700  
+- **H2:** 40px (desktop), 28px (mobile) — weight 700  
+- **H3:** 28px (desktop), 22px (mobile) — weight 700  
+- **H4:** 22px (desktop), 18px (mobile) — weight 700  
+
+### Body (Inter)
+- **Body L:** 18px — weight 500 — line-height 1.6  
+- **Body M:** 16px — weight 450–500 — line-height 1.6  
+- **Body S:** 14px — weight 450 — line-height 1.5  
+
+### Labels / UI microcopy
+- **Button label:** 16px — Inter weight 700 — letter-spacing +0.5px  
+- **Badge label:** 13px — Inter weight 800 — letter-spacing +1px (ALL CAPS)
+
+---
+
+## 2.3 Typography rules (concrete)
+### Rule A — Headlines must “hit” immediately
+Headlines are **2–6 words max**.
+- ✅ “TODAY IS A YES.”
+- ✅ “MORE GOOD DAYS.”
+- ❌ “Welcome to our initiative for increased well-being across teams”
+
+### Rule B — Use uppercase strategically (not everywhere)
+Only use ALL CAPS for:
+- badges/stamps
+- small punchy labels
+- warnings-but-happy (“⚠️ TOO MUCH JOY INSIDE”)
+
+---
+
+# 3) Shapes + Presence (What it means concretely)
+
+“Shapes have presence” means:
+### ✅ Every primary element must have:
+1) **Thick outline** (3–5px)  
+2) **Large corner radius** (see tokens below)  
+3) **Sticker-lift shadow** (see exact shadow values)  
+4) **Enough padding to feel chunky** (16–24px)
+
+If an element looks “thin” or “flat,” it’s not SUNNYCORE.
+
+---
+
+## 3.1 Shape tokens (use these exact radii)
+- `radius-pill`: **999px** (buttons, chips)
+- `radius-card`: **28px** (cards, panels)
+- `radius-input`: **18px** (forms)
+- `radius-badge`: **999px** or **18px** (capsule or rounded rectangle)
+
+---
+
+## 3.2 Signature shapes (must appear)
+At least **one** per page/poster:
+- **Burst** (sunburst / comic explosion)
+- **Stamp badge** (CERTIFIED / APPROVED)
+- **Speech bubble** (callouts, helper copy)
+
+### Burst shape spec (concrete)
+- Size: 180–320px behind the CTA/headline  
+- Outline: 4px Ink  
+- Fill: usually `sun-yellow` or `tangerine`  
+- Position: behind element, offset slightly (top-left or bottom-right by 12–24px)
+
+---
+
+# 4) Sticker Lift (The “slightly floating” effect)
+
+“Floating” in SUNNYCORE is not vague. It’s a **specific physical illusion**:
+- a thick outline
+- a shadow that looks like the object is lifted off paper
+- optional slight rotation
+
+## 4.1 Sticker shadow recipes (use these)
+Pick **one** system-wide.
+
+### Shadow A: Classic sticker lift (recommended)
+- `box-shadow: 0px 10px 0px #111111;`
+This is super distinct: it looks like a *printed cutout*.
+
+### Shadow B: Softer lift (less bold)
+- `box-shadow: 0px 8px 0px rgba(17,17,17,0.65);`
+
+### Shadow C: Double-lift (ultra sticker)
+- `box-shadow: 0px 10px 0px #111111, 0px 18px 0px rgba(17,17,17,0.25);`
+
+✅ SUNNYCORE typically uses **Shadow A** because it becomes recognizable instantly.
+
+---
+
+## 4.2 Outline thickness (exact)
+- **Primary UI elements:** 4px Ink (`#111111`)
+- **Secondary elements:** 3px Ink
+- **Tertiary / subtle elements:** 2px Ink
+
+Consistency matters more than variety.
+
+---
+
+## 4.3 Rotation rules (exact)
+Use rotation rarely and subtly:
+- Cards: **rotate(-1.5deg)** or **rotate(1.5deg)**
+- Stamps: **rotate(-8deg)** for energy
+- Never rotate text blocks in long reading sections
+
+---
+
+# 5) Component Specs (Concrete UI Recipes)
+
+## 5.1 Buttons (The Joy Button)
+A SUNNYCORE button must look like a toy button.
+
+### Primary button spec
+- Fill: `sun-yellow` or `tangerine`
+- Border: `4px solid #111111`
+- Radius: `999px`
+- Padding: **16px 26px**
+- Shadow: **Shadow A**
+- Font: Inter 700, 16px, +0.5px letter spacing
+- Optional icon: sparkle/star (left or right)
+
+**Example labels**
+- “LET’S GO ✨”
+- “PRESS FOR JOY”
+- “YES PLEASE”
+
+### Hover motion (spec)
+- Move up slightly: `translateY(-2px)`
+- Shadow becomes slightly smaller: `0px 8px 0px #111111`
+- Duration: 180ms ease-out
+
+---
+
+## 5.2 Cards (Sticker Cards)
+### Sticker card spec
+- Background: `soft-white` or any primary block color
+- Border: `4px solid #111111`
+- Radius: `28px`
+- Padding: **20px**
+- Shadow: Shadow A
+- Title: Fredoka 22–28px
+- Body: Inter 16px
+
+### Card layout pattern
+- Top-left: small icon bubble (48px)
+- Top-right: badge stamp
+- Bottom: 1 CTA link/button
+
+---
+
+## 5.3 Badges & Stamps (Signature element)
+### Badge spec
+- Background: `mint-green` or `bubblegum-pink`
+- Border: `4px solid #111111`
+- Radius: `999px`
+- Padding: **8px 14px**
+- Text: Inter 800, 13px, ALL CAPS, +1px letter spacing
+- Shadow: optional small shadow `0px 5px 0px #111111`
+
+**Examples**
+- “CERTIFIED GOOD VIBES”
+- “SUNNYCORE APPROVED”
+- “MAXIMUM JOY”
+
+---
+
+## 5.4 Inputs & Forms
+SUNNYCORE inputs must not look like “standard SaaS”.
+
+### Input spec
+- Height: **52px**
+- Border: `3px solid #111111`
+- Radius: `18px`
+- Padding: `0 16px`
+- Background: `#FFFFFF`
+- Focus: outline becomes thicker + glow
+  - Border: `4px solid #111111`
+  - Extra: `box-shadow: 0px 0px 0px 6px rgba(20,217,255,0.35);`
+
+Helper text example:
+- “You’re doing great. Type anything 💛”
+
+---
+
+# 6) Confetti Layer (Concrete Pattern System)
+
+This is a SYSTEM layer — it must appear subtly everywhere.
+
+## 6.1 Confetti elements (allowed)
+- dots
+- stars
+- sparkles
+- hearts
+- mini smiley faces (max 1 per cluster)
+
+## 6.2 Confetti density rules
+- On backgrounds: **8–12 confetti items per 500×500px**
+- Opacity: **0.08–0.14**
+- Sizes: **4px, 6px, 10px, 14px**
+- Rotation: random between -25° and +25°
+- Spacing: never evenly tiled (avoid wallpaper vibe)
+
+## 6.3 Confetti color rules
+Confetti can use:
+- `bubblegum-pink`
+- `sky-cyan`
+- `mint-green`
+- `lavender`
+But never more than **3 confetti colors per section**.
+
+---
+
+# 7) Layout Rules (Concrete)
+
+SUNNYCORE is visually loud, but layout stays simple.
+
+## 7.1 Spacing scale
+Use only this scale:
+- 8 / 16 / 24 / 40 / 64 / 96
+
+## 7.2 Section structure templates
+
+### Template A — “Hype Hero”
+- Background: `soft-white` with confetti
+- Headline block: `sun-yellow` rectangle behind text
+- One burst behind CTA
+- 1 stamp near headline
+
+**Order**
+1) H1 (Fredoka 64)
+2) Subtext (Inter 18)
+3) Primary button
+4) Stamp badge (“CERTIFIED GOOD VIBES”)
+
+### Template B — “Sticker Grid”
+- 2–4 cards in a row
+- At least 1 card rotated ±1.5°
+- Each card includes a small badge
+
+### Template C — “Big Message Banner”
+A single loud horizontal block:
+- Fill: bubblegum pink / cyan / mint
+- Border: 4px Ink
+- Text: H2, centered
+- Confetti on corners only
+
+---
+
+# 8) Copywriting (Concrete rules + examples)
+
+## 8.1 Tone rules
+- Always kind
+- Always forward-moving
+- Zero guilt
+
+## 8.2 Button copy (approved list)
+- “LET’S GO ✨”
+- “MAKE MY DAY”
+- “SHOW ME SOMETHING GOOD”
+- “YES PLEASE”
+- “PRESS FOR JOY”
+- “START THE HAPPY THING”
+
+## 8.3 Errors (approved patterns)
+Format:
+> **Oops!** + reassurance + next step + emoji
+
+Examples:
+- “Oops! That didn’t work yet — try again 🌈”
+- “Almost perfect. One small fix 💛”
+- “We’re close! Give it one more go ✨”
+
+## 8.4 Empty states
+- “Nothing here yet — but it’s about to get awesome 🎉”
+- “Your future wins will live here 🙂”
+
+---
+
+# 9) Accessibility & Readability (Concrete constraints)
+SUNNYCORE is intense — so readability must be strict.
+
+- Never place body text directly on neon without a backing shape
+- Use Ink (`#111111`) for text on light backgrounds
+- Use White text only on:
+  - `bubblegum-pink`
+  - `tangerine`
+  - deep blocks (if you add any later)
+- Minimum body size: **16px**
+- Line height: **1.6**
+
+---
+
+# 10) SUNNYCORE Tokens (CSS-style)
+Use this as the “source of truth”.
+
+```css
+:root {
+  /* Colors */
+  --sun-yellow: #FFE600;
+  --bubblegum-pink: #FF4FD8;
+  --sky-cyan: #14D9FF;
+  --mint-green: #4CFF88;
+  --tangerine: #FF7A00;
+
+  --peach: #FFB199;
+  --lavender: #B79CFF;
+  --lemon-cream: #FFF7C2;
+  --soft-white: #FFFDF5;
+  --cloud-gray: #F1F1F1;
+
+  --ink: #111111;
+  --charcoal: #1E1E1E;
+  --white: #FFFFFF;
+
+  /* Radii */
+  --radius-pill: 999px;
+  --radius-card: 28px;
+  --radius-input: 18px;
+
+  /* Borders */
+  --border-primary: 4px solid var(--ink);
+  --border-secondary: 3px solid var(--ink);
+
+  /* Shadows */
+  --shadow-sticker: 0px 10px 0px var(--ink);
+  --shadow-sticker-soft: 0px 8px 0px rgba(17,17,17,0.65);
+  --shadow-sticker-double: 0px 10px 0px var(--ink), 0px 18px 0px rgba(17,17,17,0.25);
+
+  /* Spacing */
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 40px;
+  --s-5: 64px;
+  --s-6: 96px;
+}
+```
+    </textarea>
+
+    <script>
+      const copyButton = document.querySelector("#copy-ai");
+      const aiDocument = document.querySelector("#ai-document");
+      const copyStatus = document.querySelector("#copy-status");
+
+      const setStatus = (message) => {
+        copyStatus.textContent = message;
+        if (message) {
+          setTimeout(() => {
+            copyStatus.textContent = "";
+          }, 2400);
+        }
+      };
+
+      copyButton?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(aiDocument.value.trim());
+          setStatus("Copied! Paste into your AI prompt ✨");
+        } catch (error) {
+          aiDocument.classList.remove("sr-only");
+          aiDocument.focus();
+          aiDocument.select();
+          setStatus("Select + copy the text above.");
+        }
+      });
+    </script>
+  </body>
+</html>
